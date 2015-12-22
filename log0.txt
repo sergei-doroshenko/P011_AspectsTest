@@ -1,0 +1,49 @@
+FlowLoggingAspect init
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(PaymentServiceImpl.doCredit(..)) with args [[20,200]]
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(PaymentServiceImpl.doCredit(..)) with args [[10,100]]
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(PaymentServiceImpl.doCredit(..)) with args [[30,300]]
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(BankServiceImpl.transferMoney(..)) with args [30]
+Doing money transfer for 30
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(BankServiceImpl.transferMoney(..)) returned 30
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(BankServiceImpl.transferMoney(..)) with args [300]
+Doing money transfer for 300
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(BankServiceImpl.transferMoney(..)) returned 300
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(BankServiceImpl.transferMoney(..)) with args [10]
+Session = 3ecf0cd0-b993-447d-9769-6c3ac7e98e46. Method execution(PaymentServiceImpl.doCredit(..)) returned null
+Doing money transfer for 10
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(BankServiceImpl.transferMoney(..)) returned 10
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(BankServiceImpl.transferMoney(..)) with args [100]
+Doing money transfer for 100
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(BankServiceImpl.transferMoney(..)) returned 100
+Session = 5539e937-27ee-49e7-ba04-a92628f0e4a5. Method execution(PaymentServiceImpl.doCredit(..)) returned null
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(BankServiceImpl.transferMoney(..)) with args [20]
+Doing money transfer for 20
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(BankServiceImpl.transferMoney(..)) returned 20
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(BankServiceImpl.transferMoney(..)) with args [200]
+Doing money transfer for 200
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(BankServiceImpl.transferMoney(..)) returned 200
+Session = f94d81fa-17ff-4bf0-9060-1fb478671040. Method execution(PaymentServiceImpl.doCredit(..)) returned null
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(PaymentServiceImpl.doCredit(..)) with args [[60,600]]
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(BankServiceImpl.transferMoney(..)) with args [60]
+Doing money transfer for 60
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(BankServiceImpl.transferMoney(..)) returned 60
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(BankServiceImpl.transferMoney(..)) with args [600]
+Doing money transfer for 600
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(BankServiceImpl.transferMoney(..)) returned 600
+Session = 6746e57f-5307-4bc0-b73a-1e25efdc7f7a. Method execution(PaymentServiceImpl.doCredit(..)) returned null
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(PaymentServiceImpl.doCredit(..)) with args [[40,400]]
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(PaymentServiceImpl.doCredit(..)) with args [[50,500]]
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(BankServiceImpl.transferMoney(..)) with args [40]
+Doing money transfer for 40
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(BankServiceImpl.transferMoney(..)) with args [50]
+Doing money transfer for 50
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(BankServiceImpl.transferMoney(..)) returned 50
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(BankServiceImpl.transferMoney(..)) returned 40
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(BankServiceImpl.transferMoney(..)) with args [500]
+Doing money transfer for 500
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(BankServiceImpl.transferMoney(..)) returned 500
+Session = 22a1e70a-7d3d-4f95-bc77-acf00c171086. Method execution(PaymentServiceImpl.doCredit(..)) returned null
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(BankServiceImpl.transferMoney(..)) with args [400]
+Doing money transfer for 400
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(BankServiceImpl.transferMoney(..)) returned 400
+Session = 232897b2-2e97-4373-bc1d-aac26228f916. Method execution(PaymentServiceImpl.doCredit(..)) returned null
