@@ -21,6 +21,9 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/application-context.xml")
@@ -37,7 +40,7 @@ public class PaymentServiceFacadeTest {
     public void testCreditPayment() throws Exception {
 
         int parties = 3;
-        Collection<Callable<Integer>> tasks = buildPaymentTasks1(parties);
+        Collection<Callable<Integer>> tasks = buildPaymentTasks3(parties);
         Executors.newFixedThreadPool(parties).invokeAll(tasks);
 
     }
@@ -59,6 +62,46 @@ public class PaymentServiceFacadeTest {
                     }
             );
         }
+        return tasks;
+    }
+
+    private Collection<Callable<Integer>> buildPaymentTasks2(int parties) throws InterruptedException,
+            BrokenBarrierException {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
+
+        Collection<Callable<Integer>> tasks = new ArrayList<>();
+
+        IntStream.range(0, parties * 2)
+                .forEach(i -> tasks.add(() ->
+                        {
+                            // all threads are waiting here until all 3 (parties) will arrive
+                            cyclicBarrier.await();
+                            // then each thread do it's own work
+                            doCreditPayment(Arrays.asList(10L * (i + 1), 100L * (i + 1)), i);
+                            return i;
+                        }
+                ));
+
+        return tasks;
+    }
+
+    private Collection<Callable<Integer>> buildPaymentTasks3(int parties) throws InterruptedException,
+            BrokenBarrierException {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
+
+        Collection<Callable<Integer>> tasks =
+            Stream.iterate(1, e -> e + 1)
+                .map(i -> (Callable<Integer>) () -> {
+                    // all threads are waiting here until all 3 (parties) will arrive
+                    cyclicBarrier.await();
+                    // then each thread do it's own work
+                    doCreditPayment(Arrays.asList(10L * (i + 1), 100L * (i + 1)), i);
+                    System.out.println("---------------------------------- TEST ------------------------------------");
+                    return i;
+                }).limit(parties * 2)
+                .collect(Collectors.toList());
+
+
         return tasks;
     }
 
