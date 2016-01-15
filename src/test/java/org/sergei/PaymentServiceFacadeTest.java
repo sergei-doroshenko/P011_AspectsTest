@@ -23,8 +23,8 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executors;
 
 @RunWith(SpringJUnit4ClassRunner.class)
- @ContextConfiguration(locations = "classpath:application-context.xml")
- public class PaymentServiceFacadeTest {
+@ContextConfiguration(locations = "classpath:spring/application-context.xml")
+public class PaymentServiceFacadeTest {
 
     @Autowired
     private PaymentServiceFacade paymentServiceFacade;
@@ -37,12 +37,12 @@ import java.util.concurrent.Executors;
     public void testCreditPayment() throws Exception {
 
         int parties = 3;
-        Collection<Callable<Integer>> tasks = buildPaymentTasks(parties);
+        Collection<Callable<Integer>> tasks = buildPaymentTasks1(parties);
         Executors.newFixedThreadPool(parties).invokeAll(tasks);
 
     }
 
-    private Collection<Callable<Integer>> buildPaymentTasks(int parties) throws InterruptedException,
+    private Collection<Callable<Integer>> buildPaymentTasks1(int parties) throws InterruptedException,
             BrokenBarrierException {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
 
