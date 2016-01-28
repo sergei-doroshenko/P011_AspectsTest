@@ -1,7 +1,7 @@
 package org.sergei.facade;
 
 import org.sergei.business.service.PaymentService;
-import org.sergei.business.session.Group;
+import org.sergei.business.session.dto.Group;
 import org.sergei.business.session.dto.Session;
 import org.sergei.contract.SessionRequired;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Service
 public class PaymentServiceFacade {
+
     @Autowired
     private PaymentService paymentService;
 

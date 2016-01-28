@@ -1,12 +1,9 @@
-/**
- * Created by m91snik on 22.02.15.
- */
 package org.sergei.aspect.before;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.sergei.business.session.Group;
 import org.sergei.business.session.SessionService;
+import org.sergei.business.session.dto.Group;
 import org.sergei.business.session.dto.Session;
 import org.sergei.contract.SessionRequired;
 import org.springframework.beans.factory.annotation.Autowired;

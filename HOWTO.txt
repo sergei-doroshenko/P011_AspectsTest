@@ -1,0 +1,8 @@
+1. mvn clean compile test-compile -P no_aop
+2. run PricesServiceImplTest.testCalculateAvgPrice from IDE ??? remove 'make' option from 'Before Launch' ????
+    point to the source file and choose from dropdown menu Run 'PricesServiceImplTest' or any method
+
+1. mvn clean compile test-compile -P spring_aop
+2. like in previous case
+!!! if you get java.lang.IllegalArgumentException: error at ::0 can't find referenced pointcut businessMethodPointcut
+try to comment some dependency in spring_aop profile of uncomment

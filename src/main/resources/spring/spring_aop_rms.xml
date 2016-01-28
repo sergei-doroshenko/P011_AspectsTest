@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <!-- Configuration like in rms -->
+    <bean id="businessExceptionConverterAspect" class="org.sergei.aspect.exec.ExceptionConverterAspect"/>
+
+    <bean class="org.sergei.facade.ClientServiceFacade"/>
+    <bean class="org.sergei.facade.SupplierServiceFacade"/>
+
+    <aop:config>
+        <aop:aspect ref="businessExceptionConverterAspect" order="1">
+            <aop:around method="interceptBusinessMethod"
+                        pointcut="execution(* org.sergei.facade.*.*(..) ) " />
+            <aop:around method="interceptBusinessMethod"
+                        pointcut="execution(* org.sergei.facade.SupplierServiceFacade.serve(..) ) " />
+        </aop:aspect>
+    </aop:config>
+
+</beans>

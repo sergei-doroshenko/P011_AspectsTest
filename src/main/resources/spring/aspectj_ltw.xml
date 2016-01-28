@@ -8,5 +8,5 @@
     <context:load-time-weaver/>
 
     <bean class="org.sergei.aspect.before.SecurityProtectionAspect" factory-method="aspectOf"/>
-
+    <!--<bean class="org.sergei.aspect.after.ExceptionProcessingAspect"/>-->
 </beans>

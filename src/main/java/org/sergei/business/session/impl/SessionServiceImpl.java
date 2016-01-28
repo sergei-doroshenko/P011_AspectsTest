@@ -1,13 +1,9 @@
-/**
- * Created by nikolay.garbuzov on 23.02.15.
- */
 package org.sergei.business.session.impl;
 
-import org.sergei.business.session.Group;
 import org.sergei.business.session.SessionService;
+import org.sergei.business.session.dto.Group;
 import org.sergei.business.session.dto.Session;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class SessionServiceImpl implements SessionService {

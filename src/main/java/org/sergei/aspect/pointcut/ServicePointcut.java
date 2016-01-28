@@ -1,6 +1,3 @@
-/**
- * Created by m91snik on 22.02.15.
- */
 package org.sergei.aspect.pointcut;
 
 import org.aspectj.lang.annotation.Pointcut;
@@ -10,8 +7,8 @@ import org.aspectj.lang.annotation.Pointcut;
  */
 public class ServicePointcut {
 
-    @Pointcut("execution(* org.sergei.business.service..*(..))")
-    public void businessMethodPointcut(){
+    @Pointcut("execution(* org.sergei.business.service..*(..))") // the pointcut expression
+    public void businessMethodPointcut(){ // the pointcut signature
     }
 
     @Pointcut("execution(@org.sergei.contract.SessionRequired * org.sergei.business.service..*(..))")

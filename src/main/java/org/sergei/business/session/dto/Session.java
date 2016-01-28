@@ -1,7 +1,4 @@
-
 package org.sergei.business.session.dto;
-
-import org.sergei.business.session.Group;
 
 public class Session {
     private final String userId;

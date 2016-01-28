@@ -1,6 +1,6 @@
 package org.sergei.contract;
 
-import org.sergei.business.session.Group;
+import org.sergei.business.session.dto.Group;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

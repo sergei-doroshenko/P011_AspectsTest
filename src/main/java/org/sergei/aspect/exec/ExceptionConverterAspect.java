@@ -1,6 +1,7 @@
 package org.sergei.aspect.exec;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Aspect;
 import org.sergei.business.exception.BusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by sergei on 1/15/16.
  */
+@Aspect
 public class ExceptionConverterAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionConverterAspect.class);
 
@@ -18,6 +20,7 @@ public class ExceptionConverterAspect {
      * @return an object
      * @throws BusinessException a business exception
      */
+
     public Object interceptBusinessMethod(ProceedingJoinPoint pjp) throws BusinessException {
         try {
             return pjp.proceed();
