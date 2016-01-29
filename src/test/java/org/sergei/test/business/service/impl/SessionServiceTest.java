@@ -17,7 +17,7 @@ public class SessionServiceTest {
     public void testSessionService() {
         SessionServiceImpl service = new SessionServiceImpl();
         service.createSession("001", Group.USER);
-        log.debug("User id: {}", service.getCurrentSession().getUserId());
+        log.warn("User id: {}", service.getCurrentSession().getUserId());
 //        log.debug("Session id: {}", service.getCurrentSession().getRefId());
     }
 }

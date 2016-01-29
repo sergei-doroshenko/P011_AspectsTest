@@ -1,6 +1,3 @@
-/**
- * Created by m91snik on 22.02.15.
- */
 package org.sergei.aspect.after;
 
 import com.google.gson.Gson;

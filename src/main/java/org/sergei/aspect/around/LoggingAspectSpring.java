@@ -12,9 +12,9 @@ import org.aspectj.lang.annotation.Aspect;
 public class LoggingAspectSpring {
     private static final Gson GSON = new Gson();
 
-//      @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodCallPointcut()")
+      @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodCallPointcut()")
 //  @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodPointcutWithin()")
-    @Around("execution(* org.sergei.business.service..*(..))")
+//    @Around("execution(* org.sergei.business.service..*(..))")
     public Object logMethodExecution(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         String methodName = joinPoint.getSignature().getName();

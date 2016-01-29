@@ -5,7 +5,9 @@ import org.sergei.contract.HasRefId;
 import java.util.UUID;
 
 /**
- * Field and method introduction example. It will work only with ajc compilation
+ * Field and method introduction example. It will work only with ajc compilation.
+ *
+ * Every class that implements HasRefId interface will contain unique Id (RefId).
  */
 public aspect RefIdMixinAspect {
     private String HasRefId.refId;

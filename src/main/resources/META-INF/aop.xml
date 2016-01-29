@@ -1,0 +1,20 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<!--NOTE: this file is required for AspectJ LTW-->
+<aspectj showWeavingInfo="true">
+    <weaver>
+        <include within="org.sergei.aspect..*"/> <!-- packages with aspects -->
+        <include within="org.sergei.business..*"/> <!-- packages with classes to which aspects applies -->
+    </weaver>
+
+    <!-- Describe all our aspects -->
+    <aspects>
+
+        <aspect name="org.sergei.aspect.PrecedenceAspect"/>
+
+        <aspect name="org.sergei.aspect.around.LoggingAspectSpring"/>
+        <aspect name="org.sergei.aspect.after.ExceptionProcessingAspect"/>
+        <aspect name="org.sergei.aspect.before.SecurityProtectionAspect"/>
+
+    </aspects>
+</aspectj>

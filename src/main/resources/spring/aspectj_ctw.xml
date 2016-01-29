@@ -3,5 +3,5 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean class="org.sergei.SecurityProtectionAspect" factory-method="aspectOf"/>-->
+    <bean class="org.sergei.aspect.before.SecurityProtectionAspect" factory-method="aspectOf"/>
 </beans>

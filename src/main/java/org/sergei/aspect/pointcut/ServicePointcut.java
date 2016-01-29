@@ -21,8 +21,9 @@ public class ServicePointcut {
     public void businessMethodPointcutWithin(){
     }
 
-    @Pointcut("call(* org.sergei.business..*(..)) && " +
-            "(within(org.sergei.business.service..*) || " +
+    // Here can get context from which our method call
+    @Pointcut("call(* org.sergei.business..*(..)) && " + // no method call
+            "(within(org.sergei.business.service..*) || " + // within - to restrict packages
             "within(org.sergei.business.session.impl..*))")
     public void businessMethodCallPointcut(){
     }

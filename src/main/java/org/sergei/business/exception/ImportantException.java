@@ -1,6 +1,3 @@
-/**
- * Created by m91snik on 22.02.15.
- */
 package org.sergei.business.exception;
 
 public class ImportantException extends BusinessException {

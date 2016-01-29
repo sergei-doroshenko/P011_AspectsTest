@@ -27,11 +27,11 @@ public class CustomerBeanTest {
                     assertEquals("oldAddress", evt.getOldValue());
                     assertEquals("newAddress", evt.getNewValue());
                     counter.incrementAndGet();
-                    log.debug("oldAddress: {}, newAddress: {}", evt.getOldValue(), evt.getNewValue());
+                    log.warn("oldAddress: {}, newAddress: {}", evt.getOldValue(), evt.getNewValue());
                 });
 
         testCustomer.setAddress("newAddress");
         assertEquals(1, counter.get());
-        log.debug("counter: " + counter.get());
+        log.warn("counter: " + counter.get());
     }
 }

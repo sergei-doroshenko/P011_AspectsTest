@@ -71,11 +71,6 @@
                     <artifactId>spring-aop</artifactId>
                     <version>${springframework.version}</version>
                 </dependency>
-                <!--<dependency>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjweaver</artifactId>
-                    <version>${aspectj.version}</version>
-                </dependency>-->
             </dependencies>
             <properties>
                 <target>spring_aop</target>
@@ -113,7 +108,6 @@
 
         <profile>
             <id>aspectj_ltw</id>
-            <!-- need to use @Pointcut annotation on a 'placeholder' method -->
             <dependencies>
                 <dependency>
                     <groupId>org.aspectj</groupId>
@@ -151,6 +145,9 @@
                                 <exclude>**/aspect/flow/**</exclude>
                                 <exclude>org.sergei/service/util/BytesUtil.java</exclude>
                             </excludes>
+                            <testExcludes>
+                                <testExclude>org/sergei/test/ctw/**</testExclude>
+                            </testExcludes>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -294,9 +291,10 @@
                                     <basedir>src/main/java</basedir>
                                     <excludes>
                                         <exclude>**/aspect/around/**</exclude>
-                                        <!--<exclude>**/aspect/after/**</exclude>
+                                        <exclude>**/aspect/after/**</exclude>
                                         <exclude>**/aspect/before/**</exclude>
-                                        <exclude>**/aspect/PrecedenceAspect.java</exclude>-->
+                                        <exclude>**/aspect/custom/**</exclude>
+                                        <exclude>**/aspect/PrecedenceAspect.java</exclude>
                                     </excludes>
                                 </source>
                             </sources>
@@ -327,7 +325,7 @@
 
     </profiles>
 
-    <!---javaagent:/home/nikolay.garbuzov/.m2/repository/org/springframework/spring-instrument/3.2.8.RELEASE/spring-instrument-4.1.5.RELEASE.jar-->
+    <!---javaagent:/home/nikolay.garbuzov/.m2/repository/org/springframework/spring-instrument/4.1.5.RELEASE/spring-instrument-4.1.5.RELEASE.jar-->
 
     <build>
         <resources>

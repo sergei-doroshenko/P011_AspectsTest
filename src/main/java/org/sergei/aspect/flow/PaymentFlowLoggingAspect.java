@@ -35,16 +35,16 @@ public class PaymentFlowLoggingAspect {
         String refId = hasRefId.getRefId();
 
         String methodContext = "Session = " + refId + ". Method " + joinPoint.toShortString();
-//        System.out.println(methodContext + " with args " + "" + GSON.toJson(joinPoint.getArgs()));
-        log.debug("{} with args {}", methodContext, GSON.toJson(joinPoint.getArgs()));
+        System.out.println(methodContext + " with args " + "" + GSON.toJson(joinPoint.getArgs()));
+//        log.debug("{} with args {}", methodContext, GSON.toJson(joinPoint.getArgs()));
         Object result;
         try {
             result = joinPoint.proceed(joinPoint.getArgs());
-            log.debug("{} return {}", methodContext, GSON.toJson(result));
-//            System.out.println(methodContext + " returned " + GSON.toJson(result));
+//            log.debug("{} return {}", methodContext, GSON.toJson(result));
+            System.out.println(methodContext + " returned " + GSON.toJson(result));
         } catch (Throwable t) {
-//            System.out.println(methodContext + " throw " + t.getMessage());
-            log.debug("{} throw {}", methodContext, t.getMessage());
+            System.out.println(methodContext + " throw " + t.getMessage());
+//            log.debug("{} throw {}", methodContext, t.getMessage());
             throw t;
         }
         return result;
