@@ -7,6 +7,10 @@ import org.aspectj.lang.annotation.Pointcut;
  */
 public class ServicePointcut {
 
+    @Pointcut("execution(* org.sergei.business.service.PriceService.calculateAvgPrice(..))")
+    public void businessMethodPointcutOrdered(){
+    }
+
     @Pointcut("execution(* org.sergei.business.service..*(..))") // the pointcut expression
     public void businessMethodPointcut(){ // the pointcut signature
     }
@@ -27,5 +31,4 @@ public class ServicePointcut {
             "within(org.sergei.business.session.impl..*))")
     public void businessMethodCallPointcut(){
     }
-
 }

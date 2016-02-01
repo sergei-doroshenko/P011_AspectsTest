@@ -7,14 +7,19 @@ import org.aspectj.lang.annotation.Aspect;
 
 /**
  * Created by sergei on 1/28/16.
+ *
+ * In general we call here org.springframework.aop.framework.JdkDynamicAopProxy::invoke
+ *
+ *
  */
 @Aspect
 public class LoggingAspectSpring {
     private static final Gson GSON = new Gson();
 
-      @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodCallPointcut()")
+//  @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodCallPointcut()")
 //  @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodPointcutWithin()")
-//    @Around("execution(* org.sergei.business.service..*(..))")
+  @Around("org.sergei.aspect.pointcut.ServicePointcut.businessMethodPointcut()")
+//  @Around("execution(* org.sergei.business.service..*(..))")
     public Object logMethodExecution(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         String methodName = joinPoint.getSignature().getName();

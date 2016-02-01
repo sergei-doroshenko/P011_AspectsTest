@@ -9,6 +9,9 @@
     <bean class="org.sergei.aspect.after.ExceptionProcessingAspect"/>
     <bean class="org.sergei.aspect.before.SecurityProtectionAspect"/>
 
+    <bean class="org.sergei.aspect.around.ordered.LoggingAspectSpringHigh"/>
+    <bean class="org.sergei.aspect.around.ordered.LoggingAspectSpringLow"/>
+
     <aop:aspectj-autoproxy/>
     <!--NOTE: for Spring AOP CGLIB Only-->
     <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
