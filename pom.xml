@@ -143,7 +143,7 @@
                             <target>${java.version}</target>
                             <excludes>
                                 <exclude>**/aspect/flow/**</exclude>
-                                <exclude>org.sergei/service/util/BytesUtil.java</exclude>
+                                <exclude>org/sergei/business/service/util/BytesUtil.java</exclude>
                             </excludes>
                             <testExcludes>
                                 <testExclude>org/sergei/test/ctw/**</testExclude>

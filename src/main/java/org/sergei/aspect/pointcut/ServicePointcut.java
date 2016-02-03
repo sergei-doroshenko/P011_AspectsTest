@@ -11,6 +11,10 @@ public class ServicePointcut {
     public void businessMethodPointcutOrdered(){
     }
 
+    @Pointcut("execution(* org.sergei.business.dao..*(..))")
+    public void daoMethodPointcut(){
+    }
+
     @Pointcut("execution(* org.sergei.business.service..*(..))") // the pointcut expression
     public void businessMethodPointcut(){ // the pointcut signature
     }

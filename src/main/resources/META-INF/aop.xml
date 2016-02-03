@@ -2,9 +2,12 @@
         "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
 <!--NOTE: this file is required for AspectJ LTW-->
 <aspectj showWeavingInfo="true">
+    <!-- packages with aspects -->
     <weaver>
-        <include within="org.sergei.aspect..*"/> <!-- packages with aspects -->
-        <include within="org.sergei.business..*"/> <!-- packages with classes to which aspects applies -->
+        <include within="org.sergei.aspect..*"/>
+        <!--<include within="org.sergei.aspect.after.annotated.*"/>-->
+        <!-- packages with classes to which aspects applies -->
+        <include within="org.sergei.business..*"/>
     </weaver>
 
     <!-- Describe all our aspects -->
@@ -15,6 +18,8 @@
         <aspect name="org.sergei.aspect.around.LoggingAspectSpring"/>
         <aspect name="org.sergei.aspect.after.ExceptionProcessingAspect"/>
         <aspect name="org.sergei.aspect.before.SecurityProtectionAspect"/>
+
+        <aspect name="org.sergei.aspect.after.annotated.ExceptionHandlingAspect"/>
 
     </aspects>
 </aspectj>
