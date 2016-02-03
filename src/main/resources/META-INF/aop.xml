@@ -5,7 +5,6 @@
     <!-- packages with aspects -->
     <weaver>
         <include within="org.sergei.aspect..*"/>
-        <!--<include within="org.sergei.aspect.after.annotated.*"/>-->
         <!-- packages with classes to which aspects applies -->
         <include within="org.sergei.business..*"/>
     </weaver>
